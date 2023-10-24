@@ -1,0 +1,35 @@
+{%  extends 'commonheader.html' %}
+{% block content1 %}
+<html>
+    
+    <head><h2 align="center" style="color: brown;">  Customer Registration</h2></head>
+    <body>
+    <form method="POST">
+     {% csrf_token %}
+        <table align="center" width="500" height="300">
+            <br>
+            <br>
+<tr><td> Name:</td><td><input type="text" name="name"></td></tr>
+<tr><td> Address:</td><td><input type="text" name="addr"></td></tr>
+<tr><td> Date Of Birth:</td><td><input type="date" name="dob"></td></tr>
+<tr><td> Gender:</td>
+    <td><input type="radio" name="rad" value="male">Male
+    <input type="radio" name="rad" value="female">Female</td>
+</tr>
+<tr><td> District:</td><td><select name="dis">
+    <option>--Select District--</option>
+    <option value="kasargod">Kasargod</option>
+    <option value="kannur">Kannur</option>
+    <option value="Ernakulam">Ernakulam</option>
+    <option value="kottayam">Kottayam</option>
+</select></td></tr>
+<tr><td> Email:</td><td><input type="text" name="email"></td></tr>
+<tr><td> Phone Number:</td><td><input type="text" name="phno"></td></tr>
+<tr><td> Username:</td><td><input type="text" name="uname"></td></tr>
+<tr><td> Password:</td><td><input type="Password" name="pass"></td></tr>
+<tr><td><input type="submit" name="sub" value="Submit"></td></tr>
+</table>
+</form>
+<br>
+<br>
+{% endblock %}

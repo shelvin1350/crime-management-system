@@ -1,0 +1,86 @@
+{%  extends 'stationheader.html' %}
+{% block content1 %}
+<html>
+    <br>
+    <head><h2 align="center" style="color: brown;">Criminal Details</h2></head>
+    <body>
+    <form method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+        <table align="center" width="500" height="300">
+            <br>
+            <br>
+
+
+    <tr>
+      <td>Name</td>
+      <td><input type="text" name="name" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td><input type="text" name="age" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Height</td>
+      <td><input type="text" name="height" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Weight</td>
+      <td><input type="text" name="weight" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><input name="r1" type="radio" value="male" />
+      Male
+      <input name="r1" type="radio" value="female" />
+      Female</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td><textarea name="addr" class="form-control"></textarea></td>
+    </tr>
+    <tr>
+      <td>Phone Number </td>
+      <td><input type="text" name="phno" required pattern="[0-9]{10,11}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Nickname</td>
+      <td><input type="text" name="nickname" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Complexion</td>
+      <td><input type="text" name="complex" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Crime type </td>
+      <td><input type="text" name="crimetype" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Mode of operation </td>
+      <td><input type="text" name="mode" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Identification mark </td>
+      <td><input type="text" name="idmark" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="f1" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Thumb Impression</td>
+      <td><input type="file" name="f11" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Languages known </td>
+      <td><input type="text" name="langknwn" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>No: of crimes </td>
+      <td><input type="text" name="crimeno" class="form-control"/></td>
+    </tr>
+<tr><td><input type="submit" name="sub" value="Submit"></td></tr>
+</table>
+</form>
+<br>
+<br>
+{% endblock %}

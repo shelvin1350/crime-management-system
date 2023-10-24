@@ -1,0 +1,73 @@
+{% extends 'userheader.html' %}
+{% block content1 %}
+<form method="POST">
+{% csrf_token%}
+<br>
+<br>
+<h2 align="center" style="color:brown"> Complaint  Details</h2>
+<br>
+<br>
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+<table align="center">
+   
+    <th>Complaint Title</th>
+    <th>Description</th>
+    <th>Date</th>
+    <th>Status</th>
+    <th>Reply</th>
+   
+    {% for x in data %}
+    <tr>
+        
+        
+        
+        <td>
+            {{x.2}}
+        </td>
+        <td>
+            {{x.3}}
+        </td>
+        <td>
+            {{x.6}}
+        </td>
+        <td>
+            {{x.5}}
+        </td>
+        
+        <td>
+            {{x.8}}
+        </td>
+
+        
+        
+          </tr>         
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</form>
+{% endblock %}

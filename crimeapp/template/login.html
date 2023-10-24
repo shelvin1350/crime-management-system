@@ -1,0 +1,26 @@
+{%  extends 'commonheader.html' %}
+{% block content1 %}
+<html>
+    
+    <head>
+    <br><h2 align="center" style="color: brown;">  Login Here</h2></head>
+    <body>
+        {% if msg %}
+        <script>
+            alert('{{msg}}');
+        </script>
+        {% endif %}
+    <form method="POST">
+     {% csrf_token %}
+        <table align="center" width="500" height="100">
+            <br>
+            <br>
+<tr><td> UserName:</td><td><input type="text" name="uname"></td></tr>
+<tr><td> Password:</td><td><input type="Password" name="pswd"></td></tr>
+
+<tr><td><input type="submit" name="sub" value="Submit"></td></tr>
+</table>
+</form>
+<br>
+<br>
+{% endblock %}

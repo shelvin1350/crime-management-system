@@ -1,0 +1,28 @@
+{%  extends 'userheader.html' %}
+{% block content1 %}
+<html>
+  
+<br>
+<br>
+    <head> <h2 align="center" style="color:brown"> Complaint Details</h2></head>
+    <body>
+    <form method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+        <table align="center" width="500" height="300">
+            
+<tr><td>Select Station:</td><td><select name="station"  class="form-control">
+                <option class="form-control">--Select Station--</option>
+                {% for d in data %}
+                <option value="{{d.0}}"  class="form-control">{{d.1}}</option>
+                {% endfor %}
+                </select>  </td></tr>
+<tr><td>Complaint Title</td><td><input type="text" name="comp"  class="form-control"></td></tr>
+<tr><td>Description</td><td><input type="text" name="desc"  class="form-control"></td></tr>
+<tr><td>File Upload</td><td><input type="file" name="f1"  class="form-control"></td></tr>
+
+<tr><td><input type="submit" name="compsub" value="Submit"></td></tr>
+</table>
+</form>
+<br>
+<br>
+{% endblock %}

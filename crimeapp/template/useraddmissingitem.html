@@ -1,0 +1,30 @@
+{%  extends 'userheader.html' %}
+{% block content1 %}
+<html>
+    <br>
+    <head><h2 align="center" style="color: brown;">Add Missing Item</h2></head>
+    <body>
+    <form method="POST">
+     {% csrf_token %}
+        <table align="center" width="500" height="300">
+            <br>
+            <br>
+
+<tr><td> Station:</td><td><select name="dis">
+
+    <option>--Select Station--</option>
+    {% for d in data %}
+    <option value={{d.0}}>{{d.1}}</option>
+    {% endfor %}
+</select></td></tr>
+<tr><td> Missing Item:</td><td><input type="text" name="mitem"></td></tr>
+<tr><td> Missing Date:</td><td><input type="date" name="mdate"></td></tr>
+<tr><td> Description:</td><td><input type="text" name="mdesc"></td></tr>
+<tr><td> Phone Number:</td><td><input type="text" name="phno"></td></tr>
+
+<tr><td><input type="submit" name="sub" value="Submit"></td></tr>
+</table>
+</form>
+<br>
+<br>
+{% endblock %}
